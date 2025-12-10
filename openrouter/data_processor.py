@@ -27,7 +27,7 @@ class DataProcessor:
             try:
                 processed_model = DataProcessor._process_single_model(model)
                 processed.append(processed_model)
-            except Exception as e:
+            except (ValueError, TypeError, KeyError, AttributeError) as e:
                 logger.error(f"Error processing model {model.get('id', 'unknown')}: {e}")
                 # Include the model even if processing partially fails
                 processed.append(model)
@@ -76,7 +76,7 @@ class DataProcessor:
             try:
                 dt = datetime.fromtimestamp(created)
                 processed["created_formatted"] = dt.strftime("%Y-%m-%d %H:%M:%S")
-            except:
+            except (ValueError, TypeError, OSError):
                 processed["created_formatted"] = "Unknown"
         else:
             processed["created_formatted"] = "Unknown"

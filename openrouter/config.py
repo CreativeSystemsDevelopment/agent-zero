@@ -3,7 +3,7 @@
 import os
 import sys
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Tuple
 from dotenv import load_dotenv
 
 
@@ -39,11 +39,11 @@ class Config:
         """
         return os.getenv("OPENROUTER_API_KEY")
     
-    def validate(self) -> tuple[bool, Optional[str]]:
+    def validate(self) -> Tuple[bool, Optional[str]]:
         """Validate configuration.
         
         Returns:
-            tuple: (is_valid, error_message)
+            Tuple: (is_valid, error_message)
         """
         if not self.api_key:
             return False, (
