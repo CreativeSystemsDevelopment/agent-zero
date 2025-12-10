@@ -1,0 +1,78 @@
+openrouter/
+│
+├── 📚 Documentation
+│   ├── README.md           # Complete usage guide and features
+│   ├── EXAMPLES.md         # Extensive usage examples
+│   ├── CHANGELOG.md        # Version history and roadmap
+│   ├── SUMMARY.md          # Comprehensive overview
+│   └── STRUCTURE.txt       # This file
+│
+├── 🐍 Core Python Modules
+│   ├── __init__.py         # Package initialization
+│   ├── config.py           # Configuration management
+│   ├── api_client.py       # OpenRouter API client
+│   ├── data_processor.py   # Data transformation & filtering
+│   ├── formatters.py       # Output formatters (MD/JSON/CSV)
+│   ├── cache.py            # Caching mechanism
+│   ├── main.py             # CLI application
+│   ├── demo.py             # Demo mode (no API key)
+│   └── analyze.py          # Advanced analysis tools
+│
+├── ⚙️ Configuration & Tools
+│   ├── .env.example        # Environment variable template
+│   ├── .gitignore          # Git exclusions
+│   ├── requirements.txt    # Python dependencies
+│   ├── Makefile            # Convenient commands
+│   └── run.sh              # Shell script wrapper
+│
+├── 📊 Output Files (generated)
+│   ├── or_models.md        # Markdown format
+│   ├── or_models.json      # JSON format
+│   ├── or_models.csv       # CSV format
+│   ├── demo_models.md      # Demo output (MD)
+│   ├── demo_models.json    # Demo output (JSON)
+│   ├── demo_models.csv     # Demo output (CSV)
+│   └── openrouter.log      # Application logs
+│
+└── 💾 Cache
+    └── .cache/             # Cached API responses
+        └── models_cache.json
+
+═══════════════════════════════════════════════════════════════
+
+QUICK START:
+
+  1. Demo Mode (No API Key):
+     $ make demo
+
+  2. With API Key:
+     $ export OPENROUTER_API_KEY="your-key"
+     $ make fetch
+
+  3. Analysis:
+     $ make analyze
+
+═══════════════════════════════════════════════════════════════
+
+FEATURES:
+
+  ✅ Complete OpenRouter API integration
+  ✅ Multiple output formats (MD, JSON, CSV)
+  ✅ Advanced filtering & search
+  ✅ Comprehensive analysis tools
+  ✅ Smart caching system
+  ✅ Demo mode for testing
+  ✅ Production-ready error handling
+  ✅ Extensive documentation
+
+═══════════════════════════════════════════════════════════════
+
+STATISTICS:
+
+  • 9 Python modules
+  • 5 documentation files
+  • 2,400+ total lines
+  • 1,500+ lines of code
+  • 900+ lines of docs
+
+═══════════════════════════════════════════════════════════════
