@@ -28,3 +28,6 @@ Thumbs.db
 # or_models.md
 # or_models.json
 # or_models.csv
+
+# Demo output files
+demo_models.*

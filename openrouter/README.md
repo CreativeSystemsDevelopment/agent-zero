@@ -14,6 +14,8 @@ A fully-featured application for fetching and managing model information from Op
   
 - **Multiple Output Formats**: Supports Markdown, JSON, and CSV output formats
 
+- **Advanced Analysis**: Comprehensive analysis tools for pricing, context lengths, providers, and value comparison
+
 - **Robust Error Handling**: Comprehensive error handling and retry logic for API calls
 
 - **Caching**: Smart caching to avoid unnecessary API calls
@@ -21,6 +23,8 @@ A fully-featured application for fetching and managing model information from Op
 - **Logging**: Detailed logging for debugging and monitoring
 
 - **Configuration Management**: Flexible configuration via environment variables or .env file
+
+- **Demo Mode**: Test all features without an API key using sample data
 
 ## Installation
 
@@ -36,6 +40,20 @@ The application reads the OpenRouter API key from:
 1. Environment variable `OPENROUTER_API_KEY`
 2. `.env` file in the project root (one level up)
 
+## Quick Start
+
+### Try the Demo (No API Key Required)
+
+Test the application without an API key:
+
+```bash
+python demo.py
+# or
+make demo
+```
+
+This will generate sample output files demonstrating all features.
+
 ## Usage
 
 ### Basic Usage
@@ -44,6 +62,8 @@ Fetch all models and save to Markdown (default):
 
 ```bash
 python main.py
+# or
+make fetch
 ```
 
 ### Specify Output Format
@@ -83,6 +103,36 @@ python main.py --force-refresh
 python main.py --format json --output models.json --debug --force-refresh
 ```
 
+### Using Makefile
+
+For convenience, use the provided Makefile:
+
+```bash
+make help           # Show available commands
+make demo           # Run demo mode
+make fetch          # Fetch models (Markdown)
+make fetch-json     # Fetch models (JSON)
+make fetch-csv      # Fetch models (CSV)
+make fetch-all      # Fetch in all formats
+make analyze        # Analyze models data
+make clean          # Remove output files and cache
+```
+
+### Analyzing Models
+
+After fetching models in JSON format, analyze the data:
+
+```bash
+# Full analysis
+python analyze.py
+
+# Specific analyses
+python analyze.py --pricing      # Pricing analysis only
+python analyze.py --context      # Context length analysis only
+python analyze.py --providers    # Provider analysis only
+python analyze.py --value        # Best value models only
+```
+
 ## Output Files
 
 - **Markdown** (`or_models.md`): Human-readable format with tables and sections
@@ -99,6 +149,8 @@ python main.py --format json --output models.json --debug --force-refresh
 4. **`formatters.py`**: Output formatters (Markdown, JSON, CSV)
 5. **`cache.py`**: Caching mechanism
 6. **`main.py`**: CLI interface and orchestration
+7. **`demo.py`**: Demo mode with sample data
+8. **`analyze.py`**: Advanced data analysis tools
 
 ### Pipeline
 
