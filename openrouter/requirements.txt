@@ -1,0 +1,11 @@
+# OpenRouter Model Fetcher Requirements
+# Most dependencies are inherited from parent project
+
+# Core dependencies (should be in parent requirements.txt)
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Optional: Testing dependencies
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+# responses>=0.23.0
